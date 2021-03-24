@@ -5,12 +5,19 @@ import "./Collection.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const CollectionDetail = () => {
-  const { getCollectionById } = useContext(CollectContext)
+  const { getCollectionById, deleteCollection } = useContext(CollectContext)
 
 	const [singleCollection, setSingleCollection] = useState({})
 
 	const {collectionId} = useParams();
 	const history = useHistory();
+
+  const handleDelete = () => {
+    deleteCollection(singleCollection.id)
+      .then(() => {
+        history.push("/collections")
+      })
+  }
 
   useEffect(() => {
     console.log("useEffect", collectionId)
@@ -21,11 +28,17 @@ export const CollectionDetail = () => {
     }, [])
 
   return (
-    <section className="deck">
+    <>
+        <button onClick={() => {history.push("/series/create")}}>
+          Add Series
+        </button>
+    <section className="series">
       {/* What's up with the question mark???? See below.*/}
-      {singleCollection.series?.map(series => <p><Link to={`/series/detail/${series.id}`}>
+      {singleCollection.series?.map(series => <p key={series.id}><Link to={`/series/detail/${series.id}`}>
             {series.name}
             </Link></p>)}
+            <button onClick={handleDelete}>Delete Collection</button>
     </section>
+    </>
   )
 }

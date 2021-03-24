@@ -29,6 +29,13 @@ export const CollectProvider = (props) => {
             .then(res => res.json())
     }
 
+    const deleteCollection = collectionId => {
+        return fetch(`http://localhost:8088/collections/${collectionId}`, {
+            method: "DELETE"
+        })
+            .then(getCollections)
+    }
+
     /*
         You return a context provider which has the
         `collections` state, `getCollections` function,
@@ -37,7 +44,7 @@ export const CollectProvider = (props) => {
     */
     return (
         <CollectContext.Provider value={{
-            collections, getCollections, addCollection, getCollectionById
+            collections, getCollections, addCollection, getCollectionById, deleteCollection
         }}>
             {props.children}
         </CollectContext.Provider>

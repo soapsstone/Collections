@@ -12,9 +12,6 @@ export const NavBar = (props) => {
                 <Link className="navbar__link" to="/collections">My Collections</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/series">My Series</Link>
-            </li>
-            <li className="navbar__item">
                 <Link className="navbar__link" to="/cards">My Cards</Link>
             </li>
         </ul>

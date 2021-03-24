@@ -41,7 +41,7 @@ export const CollectionForm = () => {
       setCollection(newCollection)
     }
 
-    const handleClickSaveCollection = (event) => {
+    const handleClickSaveCollection = () => {
         if (collection.name){
             addCollection({
                 id: showForm,
@@ -54,8 +54,8 @@ export const CollectionForm = () => {
             
         }
         else{
-          //invoke addEvent passing events as an argument.
-          //once complete, change the url and display the event list
+          //invoke addCollection passing collection as an argument.
+          //once complete, change the url and display the collection list
           addCollection(collection)
         } history.push("/collections")
     

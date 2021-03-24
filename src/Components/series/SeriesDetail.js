@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 import { DeckContext } from "./SeriesProvider"
 import "./Series.css"
 import { useParams, useHistory } from "react-router-dom"
+import { CardContext } from "../card/CardProvider"
+import { Card } from "../card/Card"
 
 export const SeriesDetail = () => {
   const { getDeckById } = useContext(DeckContext)
-
-	const [singleDeck, setSingleDeck] = useState({})
+  const { cards, getCards } = useContext(CardContext)
+	const [singleDeck, setSingleDeck] = useState([])
 
 	const {seriesId} = useParams();
 	const history = useHistory();
@@ -20,12 +22,26 @@ export const SeriesDetail = () => {
     })
     }, [])
 
+    useEffect(() => {
+      console.log("CardList: useEffect - getCards")
+      getCards()
+  
+    }, [])
+
   return (
-    <section className="carddeck">
+<>
+    <button onClick={() => {history.push("/cards/create")}}>
+      Add Card
+    </button> 
+    
+    <section className="card">
+      {console.log("CardList: Render", cards)}
       {/* What's up with the question mark???? See below.*/}
-      {singleDeck.cards?.map(cards => <p><Link to={`/cards/detail/${cards.id}`}>
-            {cards.name}
-            </Link></p>)}
+      {cards.map(card => {
+        return <Card key={card.id} card={card} />
+      }
+            )}
     </section>
+</>
   )
 }

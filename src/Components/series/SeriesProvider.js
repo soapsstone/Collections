@@ -26,8 +26,15 @@ export const DeckProvider = (props) => {
 
     const getDeckById = (id) => {
         console.log(id)
-        return fetch(`http://localhost:8088/series/${id}`)
+        return fetch(`http://localhost:8088/series/${id}?_embed=card`)
             .then(res => res.json())
+    }
+
+    const deleteDeck = seriesId => {
+        return fetch(`http://localhost:8088/series/${seriesId}`, {
+            method: "DELETE"
+        })
+            .then(getDecks)
     }
 
     /*
@@ -38,7 +45,7 @@ export const DeckProvider = (props) => {
     */
     return (
         <DeckContext.Provider value={{
-            decks, getDecks, addDeck, getDeckById
+            decks, getDecks, addDeck, getDeckById, deleteDeck
         }}>
             {props.children}
         </DeckContext.Provider>
