@@ -1,0 +1,63 @@
+{
+  "customers": [
+    {
+      "email": "me@me.com",
+      "name": "Me me",
+      "id": 1
+    },
+    {
+      "email": "soapsstone@gmail.com",
+      "name": "Katherine Spaulding",
+      "id": 2
+    },
+    {
+      "email": "me2@me.com",
+      "name": "Grace Adkins",
+      "id": 3
+    },
+    {
+      "email": "me3@me.com",
+      "name": "Gabe Grant",
+      "id": 4
+    }
+  ],
+  "collections": [
+    {
+      "name": "Pokemon Collection",
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "name": "Baseball Collection",
+      "userId":4,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Magic the Gathering Collection",
+      "userId":2
+    }
+  ],
+  "series": [
+      {
+          "id": 1,
+          "name": "Deck A",
+          "collectionId": 1
+      }
+  ],
+  "cards": [
+    {
+      "name": "pikachu",
+      "seriesId": 1,
+      "statId": 1,
+      "id": 1
+    }
+  ],
+  "stats": [
+    {
+      "id": 1,
+      "type": "Pokemon",
+      "cardId": 1
+    }
+  ]
+}
