@@ -24,6 +24,29 @@ export const CardProvider = (props) => {
         .then(getCards)
     }
 
+    const getCardById = (id) => {
+        return fetch(`http://localhost:8088/cards/${id}`)
+            .then(res => res.json())
+    }
+
+    const deleteCard = cardId => {
+        return fetch(`http://localhost:8088/cards/${cardId}`, {
+            method: "DELETE"
+        })
+            .then(getCards)
+    }
+
+    const updateCard = card => {
+        return fetch(`http://localhost:8088/cards/${card.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(card)
+        })
+          .then(getCards)
+      }
+
     /*
         You return a context provider which has the
         `cards` state, `getCards` function,
@@ -32,7 +55,7 @@ export const CardProvider = (props) => {
     */
     return (
         <CardContext.Provider value={{
-            cards, getCards, addCard
+            cards, getCards, addCard, getCardById, deleteCard, updateCard
         }}>
             {props.children}
         </CardContext.Provider>

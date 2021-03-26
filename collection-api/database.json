@@ -28,12 +28,11 @@
       "id": 1
     },
     {
-      "id": 3,
-      "name": "Magic the Gathering Collection",
-      "userId": 2
+      "id": 2,
+      "name": "Magic the Gathering Collection"
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Baseball Collection"
     }
   ],
@@ -44,16 +43,9 @@
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Deck B"
-    },
-    {
-      "id": 3,
-      "name": "Deck B"
-    },
-    {
-      "id": 4,
-      "name": "ghost"
+      "name": "Deck B",
+      "collectionId": 1,
+      "id": 2
     }
   ],
   "cards": [
@@ -61,11 +53,6 @@
       "name": "pikachu",
       "seriesId": 1,
       "id": 1
-    },
-    {
-      "name": "charizard",
-      "seriesId": 1,
-      "id": 2
     }
   ]
 }

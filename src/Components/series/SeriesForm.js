@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useParams, useHistory } from "react-router-dom"
 import { DeckContext } from "./SeriesProvider";
 import "./Series.css";
 
@@ -15,6 +15,7 @@ export const SeriesForm = () => {
    const [deck, setSingleDeck] = useState({});
    const [showForm, setShowForm] = useState(false)
    const history = useHistory();
+   const {collectionId} = useParams();
 
     /*
     Reach out to the world and get customers state
@@ -38,23 +39,29 @@ export const SeriesForm = () => {
         setSingleDeck(newDeck)
       }
 
-      const handleClickSaveDeck = () => {
+      const handleClickSaveDeck = (e) => {
+        e.preventDefault()
         if (deck.name){
+         
             addDeck({
-                id: showForm,
                 name: deck.name,
+                collectionId: +collectionId
+                //add collectionId property and get the value from the param
                 // date: event.date,
                 // location: event.location
-            });
-            setShowForm(false);
-            setSingleDeck({})
+            })
+            .then(() =>  history.push(`/collections/detail/${collectionId}`))
+            // setShowForm(false);
+            // setSingleDeck({})
             
         }
         else{
+          
           //invoke addDeck passing deck as an argument.
           //once complete, change the url and display the deck list
           addDeck(deck)
-        } history.push("/series")
+          .then(() => history.push(`/collections/detail/${collectionId}`))
+        } 
     
   }
 

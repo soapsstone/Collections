@@ -13,6 +13,7 @@ export const CollectionDetail = () => {
 	const history = useHistory();
 
   const handleDelete = () => {
+    console.log(singleCollection)
     deleteCollection(singleCollection.id)
       .then(() => {
         history.push("/collections")
@@ -29,7 +30,7 @@ export const CollectionDetail = () => {
 
   return (
     <>
-        <button onClick={() => {history.push("/series/create")}}>
+        <button onClick={() => {history.push(`/series/create/${singleCollection.id}`)}}>
           Add Series
         </button>
     <section className="series">
@@ -37,7 +38,7 @@ export const CollectionDetail = () => {
       {singleCollection.series?.map(series => <p key={series.id}><Link to={`/series/detail/${series.id}`}>
             {series.name}
             </Link></p>)}
-            <button onClick={handleDelete}>Delete Collection</button>
+            
     </section>
     </>
   )
