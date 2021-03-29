@@ -7,10 +7,9 @@ import { CardContext } from "../card/CardProvider"
 import { Card } from "../card/Card"
 
 export const SeriesDetail = () => {
-  const { getDeckById } = useContext(DeckContext)
+  const { getDeckById, deleteDeck } = useContext(DeckContext)
   const { cards, getCards } = useContext(CardContext)
 	const [singleDeck, setSingleDeck] = useState([])
-
 	const {seriesId} = useParams();
 	const history = useHistory();
 
@@ -28,9 +27,20 @@ export const SeriesDetail = () => {
   
     }, [])
 
+    const handleDelete = () => {
+      console.log(singleDeck)
+      deleteDeck(singleDeck.id)
+        .then(() => {
+          history.push("/collections")
+        })
+    }
+
+
+
+
   return (
 <>
-    <button onClick={() => {history.push("/cards/create")}}>
+    <button onClick={() => {history.push(`/cards/create/${singleDeck.id}`)}}>
       Add Card
     </button> 
     
@@ -38,10 +48,16 @@ export const SeriesDetail = () => {
       {console.log("CardList: Render", cards)}
       {/* What's up with the question mark???? See below.*/}
       {cards.map(card => {
-        return <Card key={card.id} card={card} />
+        return <div><Card key={card.id} card={card} />
+        
+        </div>
       }
             )}
+
+            
+            <button onClick={handleDelete}>Delete Deck</button>
     </section>
+    
 </>
   )
 }
