@@ -10,7 +10,6 @@ export const SeriesDetail = () => {
   const { getDeckById, deleteDeck } = useContext(DeckContext)
   const { cards, getCards } = useContext(CardContext)
 	const [singleDeck, setSingleDeck] = useState([])
-
 	const {seriesId} = useParams();
 	const history = useHistory();
 
@@ -36,6 +35,9 @@ export const SeriesDetail = () => {
         })
     }
 
+
+
+
   return (
 <>
     <button onClick={() => {history.push(`/cards/create/${singleDeck.id}`)}}>
@@ -47,10 +49,7 @@ export const SeriesDetail = () => {
       {/* What's up with the question mark???? See below.*/}
       {cards.map(card => {
         return <div><Card key={card.id} card={card} />
-        <button onClick={() => {
-          console.log(cards)
-          history.push(`/cards/edit/${card.id}`)
-        }}>Edit</button>
+        
         </div>
       }
             )}
