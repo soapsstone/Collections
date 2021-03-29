@@ -46,12 +46,15 @@ export const SeriesDetail = () => {
       {console.log("CardList: Render", cards)}
       {/* What's up with the question mark???? See below.*/}
       {cards.map(card => {
-        return <Card key={card.id} card={card} />
+        return <div><Card key={card.id} card={card} />
+        <button onClick={() => {
+          console.log(cards)
+          history.push(`/cards/edit/${card.id}`)
+        }}>Edit</button>
+        </div>
       }
             )}
-            <button onClick={() => {
-              history.push(`/cards/edit/${cards.id}`)
-            }}>Edit</button>
+
             
             <button onClick={handleDelete}>Delete Deck</button>
     </section>

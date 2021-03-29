@@ -30,10 +30,6 @@
     {
       "id": 2,
       "name": "Magic the Gathering Collection"
-    },
-    {
-      "id": 3,
-      "name": "Baseball Collection"
     }
   ],
   "series": [
@@ -53,6 +49,16 @@
       "name": "pikachu",
       "seriesId": 1,
       "id": 1
+    },
+    {
+      "name": "ghost",
+      "seriesId": null,
+      "id": 2
+    },
+    {
+      "name": "test",
+      "seriesId": null,
+      "id": 3
     }
   ]
 }
