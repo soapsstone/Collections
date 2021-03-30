@@ -33,8 +33,9 @@ export const Card = ({ card }) => {
       useEffect(() => {
         if (cardId){
           getCardById(cardId)
-          .then(cardId => {
-            setCardEdit(cardId)
+          .then(cardEdit => {
+            console.log(singleCard)
+            setCardEdit(singleCard)
             setIsLoading(false)
           })
         } else {

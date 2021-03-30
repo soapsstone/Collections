@@ -42,23 +42,18 @@
       "name": "Deck B",
       "collectionId": 1,
       "id": 2
+    },
+    {
+      "name": "Deck A",
+      "collectionId": 2,
+      "id": 3
     }
   ],
   "cards": [
     {
+      "id": 1,
       "name": "pikachu",
-      "seriesId": 1,
-      "id": 1
-    },
-    {
-      "name": "ghost",
-      "seriesId": null,
-      "id": 2
-    },
-    {
-      "name": "test",
-      "seriesId": null,
-      "id": 3
+      "seriesId": null
     }
   ]
 }

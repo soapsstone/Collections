@@ -49,12 +49,9 @@ export const SeriesDetail = () => {
       {/* What's up with the question mark???? See below.*/}
       {cards.map(card => {
         return <div><Card key={card.id} card={card} />
-        
         </div>
       }
             )}
-
-            
             <button onClick={handleDelete}>Delete Deck</button>
     </section>
     
