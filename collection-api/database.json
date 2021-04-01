@@ -63,5 +63,11 @@
       "id": 4
     }
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": 1,
+      "name": "HIIIII",
+      "seriesId": null
+    }
+  ]
 }

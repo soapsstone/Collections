@@ -26,7 +26,7 @@ export const DeckProvider = (props) => {
 
     const getDeckById = (id) => {
         console.log(id)
-        return fetch(`http://localhost:8088/series/${id}?_embed=card`)
+        return fetch(`http://localhost:8088/series/${id}?_embed=cards`)
             .then(res => res.json())
     }
 
