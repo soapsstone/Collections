@@ -25,6 +25,6 @@ export const Collection = ({ collection }) => {
             {collection.name}
             </Link>
         </h3>
-        <button onClick={handleDelete}>Delete Collection</button>
+        <button className="btn btn-danger" onClick={handleDelete}>Delete Collection</button>
     </section>
 )}

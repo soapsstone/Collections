@@ -40,7 +40,8 @@ export const CardForm = () => {
           updateCard({
                 id: singleCard.id,
                 name: singleCard.name,
-                seriesId: +seriesId
+                seriesId: +seriesId,
+                customerId: +localStorage.getItem("database_customer")
                 // date: event.date,
                 // location: event.location
             })
@@ -51,7 +52,8 @@ export const CardForm = () => {
           //once complete, change the url and display the card list
           addCard({
             name: singleCard.name,
-            seriesId: +seriesId
+            seriesId: +seriesId,
+            customerId: +localStorage.getItem("database_customer")
           })
           .then(() => history.push(`/series/detail/${seriesId}`))
           console.log(seriesId)

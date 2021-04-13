@@ -30,15 +30,17 @@ export const CollectionList = () => {
 
     <h2>Collections</h2>
     
-		<button onClick={() => {history.push("/collections/create")}}>
+		<button className="btn btn-success" onClick={() => {history.push("/collections/create")}}>
             Add Collection
         </button>
 
     <div className="collections">
       {console.log("CollectionList: Render", collections)}
       {
-        collections.map(collection => {
-          return <Collection key={collection.id} collection={collection} />
+        collections.map(collections => {
+          if (collections.customerId === +localStorage.getItem("database_customer")){
+          return <Collection className="text" key={collections.id} collection={collections} />
+          }
         })
       }
     </div>

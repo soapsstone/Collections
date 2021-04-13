@@ -52,7 +52,7 @@ export const Card = ({ card }) => {
         onClick={() => {
           history.push(`/cards/edit/${card.id}`)
         }}>Edit</button>
-        <button onClick={handleDelete}>Delete Card</button>
+        <button className="btn btn-info" onClick={handleDelete}>Delete</button>
     </section>
     
     )

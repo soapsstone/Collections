@@ -28,46 +28,146 @@
   ],
   "collections": [
     {
-      "name": "Pokemon Collection",
-      "userId": 2,
+      "name": "Pokemon",
+      "customerId": 2,
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Magic the Gathering Collection"
+      "id": 5,
+      "name": "test",
+      "customerId": 1
     },
     {
-      "id": 3,
-      "name": "Godzilla"
+      "id": 6,
+      "name": "Baseball",
+      "customerId": 2
+    },
+    {
+      "id": 7,
+      "name": "Garbage Pail Kids",
+      "customerId": 2
+    },
+    {
+      "id": 8,
+      "name": "Magic the Gathering Collection",
+      "customerId": 2
     }
   ],
   "series": [
     {
       "name": "Deck A",
       "collectionId": 1,
+      "customerId": 2,
       "id": 1
     },
     {
       "name": "Deck B",
       "collectionId": 1,
+      "customerId": 2,
       "id": 2
     },
     {
       "name": "Deck A",
       "collectionId": 2,
+      "customerId": 2,
       "id": 3
     },
     {
-      "name": "American Version",
-      "collectionId": 3,
-      "id": 4
+      "name": "test",
+      "collectionId": 5,
+      "id": 5
+    },
+    {
+      "name": "test",
+      "collectionId": 5,
+      "customerId": 1,
+      "id": 8
+    },
+    {
+      "name": "test",
+      "collectionId": 5,
+      "customerId": 1,
+      "id": 9
+    },
+    {
+      "name": "Original Pokemon",
+      "collectionId": 1,
+      "customerId": 2,
+      "id": 10
+    },
+    {
+      "name": "Deck A",
+      "collectionId": 7,
+      "customerId": 2,
+      "id": 11
+    },
+    {
+      "name": "Next generation",
+      "collectionId": 1,
+      "customerId": 2,
+      "id": 12
     }
   ],
   "cards": [
     {
       "id": 1,
-      "name": "HIIIII",
-      "seriesId": null
+      "name": "Charmander",
+      "seriesId": null,
+      "customerId": 2
+    },
+    {
+      "id": 2,
+      "name": "Charmeleon",
+      "seriesId": null,
+      "customerId": 2
+    },
+    {
+      "id": 3,
+      "name": "Charizard",
+      "seriesId": null,
+      "customerId": 2
+    },
+    {
+      "id": 4,
+      "name": "Bulbasaur",
+      "seriesId": null,
+      "customerId": 2
+    },
+    {
+      "id": 5,
+      "name": "Ivysaur",
+      "seriesId": null,
+      "customerId": 2
+    },
+    {
+      "id": 6,
+      "name": "Venusaur",
+      "seriesId": null,
+      "customerId": 2
+    },
+    {
+      "name": "Squirtle",
+      "seriesId": 3,
+      "customerId": 2,
+      "id": 8
+    },
+    {
+      "name": "Wartortle",
+      "seriesId": 3,
+      "customerId": 2,
+      "id": 9
+    },
+    {
+      "name": "Blastoise",
+      "seriesId": 10,
+      "customerId": 2,
+      "id": 10
+    },
+    {
+      "name": "Caterpie",
+      "seriesId": 10,
+      "customerId": 2,
+      "id": 11
     }
   ]
 }

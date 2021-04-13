@@ -46,6 +46,7 @@ export const CollectionForm = () => {
             addCollection({
                 id: showForm,
                 name: collection.name,
+                customerId: +localStorage.getItem("database_customer")
                 // date: event.date,
                 // location: event.location
             });

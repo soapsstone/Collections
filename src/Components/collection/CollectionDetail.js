@@ -30,15 +30,20 @@ export const CollectionDetail = () => {
 
   return (
     <>
-        <button onClick={() => {history.push(`/series/create/${singleCollection.id}`)}}>
+        <button className="btn btn-success" onClick={() => {history.push(`/series/create/${singleCollection.id}`)}}>
           Add Series
         </button>
-    <section className="series">
+    <section className="serieses">
       {/* What's up with the question mark???? See below.*/}
-      {singleCollection.series?.map(series => <p key={series.id}><Link to={`/series/detail/${series.id}`}>
+      {singleCollection.series?.map(series => {
+        if (singleCollection.customerId === +localStorage.getItem("database_customer")){
+          return <p key={series.id}><Link className= "link" to={`/series/detail/${series.id}`}>
             {series.name}
-            </Link></p>)}
-            
+            </Link>
+      </p>
+      }}
+          )}
+    
     </section>
     </>
   )

@@ -45,7 +45,8 @@ export const SeriesForm = () => {
          
             addDeck({
                 name: deck.name,
-                collectionId: +collectionId
+                collectionId: +collectionId,
+                customerId: +localStorage.getItem("database_customer")
                 //add collectionId property and get the value from the param
                 // date: event.date,
                 // location: event.location
